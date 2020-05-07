@@ -1,0 +1,8 @@
+steps:
+  - id: build
+    name: 'gcr.io/kaniko-project/executor:v0.16.0'
+    args:
+      - --dockerfile=./Dockerfile
+      - --destination=gcr.io/${PROJECT_ID}/kaniko-cache
+      - --cache=true
+      - --cache-ttl=6h
